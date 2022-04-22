@@ -2,8 +2,10 @@ import image from '../../assets/under_construction.png'
 
 const Home : React.FC = () => 
   <div>
-    <h2>Home</h2>
-    <img src={image} alt='Under construction!'/>
+    <p>Welcome to the home of the Justice Department of Fakelandia</p>
+    <p>Here you can browse a list of recent misdemeanours committed by our citezens,
+      or you can confess to your own misdemeanours.
+    </p>
   </div>;
 
 export default Home;
