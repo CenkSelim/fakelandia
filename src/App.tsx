@@ -1,11 +1,13 @@
-import React from 'react';
-import image from './assets/under_construction.png'
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import Router from './components/router/router';
 
 function App() {
   return (
     <>
-      <img src={image} alt='Under construction!'/>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </>
   );
 }
