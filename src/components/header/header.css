@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    padding: 1rem;
+    background: #ffffff;
+    justify-content: flex-start;
+}
+.header__title {
+    display: block;
+    padding: 1rem;
+    background: #ffffff;
+
+}
+.header__links {
+    display: flex;
+    flex-direction:row;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+.link {
+    color: black;
+}
+
+.link--active {
+    color: blue;
+    font-weight: bold;
+}

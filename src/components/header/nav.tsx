@@ -2,10 +2,16 @@ import { NavLink } from "react-router-dom";
 
 const Nav : React.FC = () =>
   <nav>
-      <ul>
-          <li><NavLink to='/'>Home</NavLink></li>
-          <li><NavLink to='/misdemeanour'>Misdemeanours</NavLink></li>
-          <li><NavLink to='/confession'>Confess To Us</NavLink></li>
+      <ul className="header__links">
+          <li><NavLink to='/'
+            className={({ isActive }) => isActive ? 'link--active' : 'link'}
+            >Home</NavLink></li>
+          <li><NavLink to='/misdemeanour'
+            className={({ isActive }) => isActive ? 'link--active' : 'link'}
+            >Misdemeanours</NavLink></li>
+          <li><NavLink to='/confession'
+            className={({ isActive }) => isActive ? 'link--active' : 'link'}
+            >Confess To Us</NavLink></li>
       </ul>
   </nav>;
 

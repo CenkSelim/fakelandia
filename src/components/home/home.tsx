@@ -1,4 +1,3 @@
-import image from '../../assets/under_construction.png'
 
 const Home : React.FC = () => 
   <div>
