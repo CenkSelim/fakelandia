@@ -19,9 +19,11 @@
 
 .link {
     color: black;
+    text-decoration: none;
 }
 
 .link--active {
-    color: blue;
+    color: rgb(186, 105, 200);
     font-weight: bold;
+    text-decoration: none;
 }
