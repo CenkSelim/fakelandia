@@ -2,36 +2,35 @@ import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import Router from './components/router/router';
 import React, { useEffect, useState } from 'react';
-import IMistemeanours from './components/misdemeanour/interfacemisdemeanours';
+import IMisdemeanours from './components/misdemeanour/interfacemisdemeanours';
 import generateMisdemeanours from './components/misdemeanour/generatemisdemeanours';
+import MisdemeanourContext from './components/misdemeanour/misdemeanourcontext';
 
 const App : React.FC = () => {
 
-  const [numberOfMistermeanours, setnumberOfMistermeanours] = useState<number>(10);
-  const [mistemeanours, setMistemeanours] = useState<Array<IMistemeanours>>([
-   
-  ]);
-
-  useEffect(() => {
-    if (mistemeanours.length < numberOfMistermeanours)
-    {
-      const getMistemeanours = async (numberOfMistermeanours : number) => {
-        const apiResponse = await generateMisdemeanours(numberOfMistermeanours);
-        setMistemeanours(apiResponse);
-      };
-      getMistemeanours(numberOfMistermeanours);
-
-    }	
-  });
-
+  const [loaded, setLoaded] = useState<boolean>(false);
+  const numberOfMisdemeanours:number = 10;
+  const [misdemeanours, setMisdemeanours] = useState<Array<IMisdemeanours>>([]);
   
-
+  useEffect(() => {
+    if (loaded)
+    {
+      return;
+    }
+    const getMistemeanours = async (numberOfMisdemeanours : number) => {
+      const apiResponse = await generateMisdemeanours(numberOfMisdemeanours);
+      setMisdemeanours(apiResponse);
+    };
+    getMistemeanours(numberOfMisdemeanours);
+    setLoaded(true);
+  },[loaded,numberOfMisdemeanours]);
+  
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
+      <MisdemeanourContext.Provider value={misdemeanours}>
         <Router />
-      </BrowserRouter>
-    </>
+      </MisdemeanourContext.Provider>
+    </BrowserRouter>
   );
 }
 
