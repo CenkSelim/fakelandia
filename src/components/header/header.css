@@ -3,6 +3,10 @@
     padding: 1rem;
     background: #ffffff;
     justify-content: flex-start;
+    border-top: solid;
+    border-bottom: solid;
+    border-left: solid;
+    border-right: solid;
 }
 .header__title {
     display: block;

@@ -1,4 +1,4 @@
-import IMisdemeanours from "./interfacemisdemeanours";
+import IMisdemeanour from "./interfacemisdemeanour";
 
 export const MISDEMEANOURS = [
 	'rudeness',
@@ -11,7 +11,7 @@ export type Misdemeanour = typeof MISDEMEANOURS[number];
 
 export default async function generateMisdemeanours(
 	number: number
-): Promise<Array<IMisdemeanours>> {
+): Promise<Array<IMisdemeanour>> {
 	// pretend this is an API we're calling, wait 1.5s
 	await sleep(1500);
 
