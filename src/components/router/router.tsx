@@ -7,8 +7,9 @@ import NotFound from "../not_found/not_found";
 
 const Router : React.FC = () =>
     <Routes>
-        <Route path="/" element={<MainLayout/>}>
+        <Route element={<MainLayout/>}>
             <Route index element={<Home/>}/>
+            <Route path="home" element={<Home/>}/>
             <Route path="misdemeanour" element={<Misdemeanour/>}/>
             <Route path="confession" element={<Confession/>}/>
             <Route path="*" element={<NotFound/>} />
