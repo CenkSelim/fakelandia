@@ -13,7 +13,7 @@ const Nav : React.FC = () =>
             </NavLink>
           </li>
           <li className="nav__link">
-            <NavLink to='misdemeanour'
+            <NavLink to='misdemeanours'
               className={({ isActive }) => isActive ? 'link--active' : 'link'}
               >Misdemeanours
             </NavLink>

@@ -2,16 +2,16 @@ import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import Router from './components/router/router';
 import React, { useEffect, useState } from 'react';
-import IMisdemeanours from './components/misdemeanour/interfacemisdemeanours';
-import generateMisdemeanours from './components/misdemeanour/generatemisdemeanours';
-import MisdemeanourContext from './components/misdemeanour/misdemeanourcontext';
+import IMisdemeanours from './components/misdemeanours/interfacemisdemeanours';
+import generateMisdemeanours from './components/misdemeanours/generatemisdemeanours';
+import MisdemeanourContext from './components/misdemeanours/misdemeanourscontext';
 
 const App : React.FC = () => {
 
   const [loaded, setLoaded] = useState<boolean>(false);
   const numberOfMisdemeanours:number = 10;
   const [misdemeanours, setMisdemeanours] = useState<Array<IMisdemeanours>>([]);
-  
+
   useEffect(() => {
     if (loaded)
     {
