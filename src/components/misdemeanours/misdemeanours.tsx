@@ -1,16 +1,18 @@
 import { useContext, useEffect, useState } from 'react';
 import MisdemeanourContext from './misdemeanourscontext';
 import IMisdemeanour from './interfacemisdemeanour';
+import MisdemeanourItem from './misdemeanouritem';
 const Misdemeanours : React.FC = () =>{
 
     const misdemeanours = useContext(MisdemeanourContext);
     const [filteredList, setFilteredList] = useState<Array<IMisdemeanour>>([]);
     const [loaded, setLoaded] = useState<boolean>(false);
     const [selectedFilter, setSelectedFilter] = useState("");
+    console.log(misdemeanours);
 
     useEffect(()=>{
         console.log("1" + loaded);
-        if (loaded)
+        if (loaded && filteredList.length > 0)
         {
             return;
         }
@@ -19,15 +21,14 @@ const Misdemeanours : React.FC = () =>{
         if (selectedFilter!=="") {
             console.log(selectedFilter);
             setFilteredList(misdemeanours.filter((item) => item.misdemeanour === selectedFilter));
-        }
-        
+        } 
         setLoaded(true);
-    },[selectedFilter,loaded,misdemeanours])
+    },[selectedFilter,misdemeanours])
 
     const updateHandlerFilter = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        e.preventDefault();       
-        setSelectedFilter(e.target.value); 
+        //e.preventDefault(); 
         setLoaded(false);        
+        setSelectedFilter(e.target.value);      
     };
 
 
@@ -44,15 +45,13 @@ const Misdemeanours : React.FC = () =>{
 
 return (
   <div>
-    <h2>Misdemeanours</h2>
     <div>
-            <h3>Display a list of misdemeanour items</h3>
             <table>
                 <thead>
                     <tr>
                         <th></th>
                         <th></th>
-                        <th>Filter
+                        <th>
                             <div>
                                 <select
                                     name="misdemeanour-list"
@@ -78,12 +77,11 @@ return (
                 </thead>
                 <tbody>
                     {filteredList && filteredList.map((misdemeanour,index) =>
-                        <tr key={index}>
-                            <td>********</td>
-                            <td>{misdemeanour.date}</td>
-                            <td>{getMisdemenourDescription(misdemeanour.misdemeanour)?.description}</td>
-                            <td><img alt="Randomly generated" src={`https://picsum.photos/60/60?${index}`} /></td>
-                        </tr>
+                       <MisdemeanourItem 
+                        index={index}
+                        date={misdemeanour.date}
+                        misdemeanour={misdemeanour.misdemeanour}
+                       />                     
                     )}
                 </tbody>
             </table>
