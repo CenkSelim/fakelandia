@@ -16,6 +16,7 @@ return (
                         <th>Citizen Id</th>
                         <th>Date</th>
                         <th>Misdemeanour</th>
+                        <th>Punishment Idea</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,6 +25,7 @@ return (
                             <td>{misdemeanour.citizenId}</td>
                             <td>{misdemeanour.date}</td>
                             <td>{misdemeanour.misdemeanour}</td>
+                            <td><img alt="Randomly generated" src={`https://picsum.photos/60/60?${Math.random()}`} /></td>
                         </tr>
                     )}
                 </tbody>
