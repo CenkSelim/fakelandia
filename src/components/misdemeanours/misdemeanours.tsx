@@ -3,7 +3,25 @@ import MisdemeanourContext from './misdemeanourscontext';
 
 const Misdemeanours : React.FC = () =>{
 
-  const misdemeanours = useContext(MisdemeanourContext);
+    const misdemeanours = useContext(MisdemeanourContext);
+    const emojis = [{
+        id: "vegetables",
+        description:"Not Eating Your Vegetables 🥗"
+         },
+       {
+        id: "rudeness",
+        description:"Mild Public Rudeness 🤪"
+         },
+         {
+        id: "lift",
+        description:"Speaking in a Lift  🗣"
+         },
+         {
+        id: "united",
+        description:"Supporting Manchester United  😈"
+         },
+    ];
+    const getMisdemenourDescription =(param:string) => (emojis.find( ({ id }) => id === param ));
 
 return (
   <div>
@@ -24,7 +42,7 @@ return (
                         <tr key={index}>
                             <td>{misdemeanour.citizenId}</td>
                             <td>{misdemeanour.date}</td>
-                            <td>{misdemeanour.misdemeanour}</td>
+                            <td>{getMisdemenourDescription(misdemeanour.misdemeanour)?.description}</td>
                             <td><img alt="Randomly generated" src={`https://picsum.photos/60/60?${Math.random()}`} /></td>
                         </tr>
                     )}
