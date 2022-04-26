@@ -12,6 +12,7 @@ const App : React.FC = () => {
   const [numberOfMisdemeanours] = useState<number>(10);
   const [misdemeanours, setMisdemeanours] = useState<Array<IMisdemeanour>>([]);
 
+
   useEffect(() => {
     if (loaded)
     {
@@ -27,7 +28,7 @@ const App : React.FC = () => {
   
   return (
     <BrowserRouter>
-      <MisdemeanourContext.Provider value={misdemeanours}>
+      <MisdemeanourContext.Provider value={[misdemeanours,setMisdemeanours]}>
         <Router />
       </MisdemeanourContext.Provider>
     </BrowserRouter>

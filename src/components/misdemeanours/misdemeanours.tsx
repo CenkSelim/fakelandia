@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from 'react';
-import MisdemeanourContext from './misdemeanourscontext';
+import MisdemeanoursContext from './misdemeanourscontext';
 import IMisdemeanour from './interfacemisdemeanour';
 import MisdemeanourItem from './misdemeanouritem';
 const Misdemeanours : React.FC = () =>{
 
-    const misdemeanours = useContext(MisdemeanourContext);
+    const [misdemeanours, setMisdemeanours] =  useContext(MisdemeanoursContext);
     const [filteredList, setFilteredList] = useState<Array<IMisdemeanour>>([]);
     const [loaded, setLoaded] = useState<boolean>(false);
     const [selectedFilter, setSelectedFilter] = useState("");
@@ -12,7 +12,11 @@ const Misdemeanours : React.FC = () =>{
 
     useEffect(()=>{
         console.log("1" + loaded);
-        if (loaded && filteredList.length > 0)
+        if (misdemeanours.length < 1)
+        {
+            return;
+        }
+        if (loaded)
         {
             return;
         }

@@ -1,10 +1,9 @@
-import IMisdemeanour from "./interfacemisdemeanour";
 import React from "react";
+import IMisdemeanour from './interfacemisdemeanour';
 
-const MisdemeanoursContext = React.createContext<IMisdemeanour[]>([{
+const MisdemeanoursContext = React.createContext([[{
     citizenId: 0,
     misdemeanour: 'Default misdemeanour', 
-    date: 'Default date'
-}]);
+    date: 'Default date'}],  (misdemeanours: IMisdemeanour[]) => {}]);
 
 export default MisdemeanoursContext;
