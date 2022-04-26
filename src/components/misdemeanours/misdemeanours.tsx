@@ -11,20 +11,14 @@ const Misdemeanours : React.FC = () =>{
     console.log(misdemeanoursContext);
 
     useEffect(()=>{
-        console.log("1" + loaded);
-        if (misdemeanoursContext.misdemeanours.length < 1)
+        if (misdemeanoursContext.misdemeanours.length <= 0 || loaded)
         {
             return;
         }
-        if (loaded)
-        {
-            return;
-        }
-        console.log("2" + selectedFilter);
         setFilteredList(misdemeanoursContext.misdemeanours.map((item) => item));
         if (selectedFilter!=="") {
             console.log(selectedFilter);
-        //    setFilteredList(misdemeanours.filter((item) => item.misdemeanour === selectedFilter));
+            setFilteredList(misdemeanoursContext.misdemeanours.filter((item) => item.misdemeanour === selectedFilter));
         } 
         setLoaded(true);
     },[selectedFilter,misdemeanoursContext.misdemeanours])
@@ -34,16 +28,6 @@ const Misdemeanours : React.FC = () =>{
         setLoaded(false);        
         setSelectedFilter(e.target.value);      
     };
-
-    const emojis = [
-        {id: "vegetables",description:"Not Eating Your Vegetables 🥗"},
-        {id: "rudeness",description:"Mild Public Rudeness 🤪"},
-        {id: "lift",description:"Speaking in a Lift  🗣"},
-        {id: "united",description:"Supporting Manchester United  😈"},
-    ];
-    
-    const getMisdemenourDescription =(param:string) => (emojis.find( ({ id }) => id === param ));  
-    
 
 return (
   <div>
@@ -61,7 +45,7 @@ return (
                                     onChange={updateHandlerFilter}
                                 >
                                     <option value="">All</option>
-                                    <option value="vegetables">Vegetables</option>7
+                                    <option value="vegetables">Vegetables</option>
                                     <option value="rudeness">Rudeness</option>
                                     <option value="lift">Lift</option>
                                     <option value="united">United</option>
@@ -80,7 +64,9 @@ return (
                 <tbody>
                     {filteredList && filteredList.map((misdemeanour,index) =>
                        <MisdemeanourItem 
+                        key={index}
                         index={index}
+                        citizenId={misdemeanour.citizenId}
                         date={misdemeanour.date}
                         misdemeanour={misdemeanour.misdemeanour}
                        />                     
