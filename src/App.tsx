@@ -28,7 +28,7 @@ const App : React.FC = () => {
   
   return (
     <BrowserRouter>
-      <MisdemeanourContext.Provider value={[misdemeanours,setMisdemeanours]}>
+      <MisdemeanourContext.Provider value={{misdemeanours:misdemeanours,setMisdemeanours:setMisdemeanours}}>
         <Router />
       </MisdemeanourContext.Provider>
     </BrowserRouter>

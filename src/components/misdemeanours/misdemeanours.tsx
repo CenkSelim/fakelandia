@@ -4,15 +4,15 @@ import IMisdemeanour from './interfacemisdemeanour';
 import MisdemeanourItem from './misdemeanouritem';
 const Misdemeanours : React.FC = () =>{
 
-    const [misdemeanours, setMisdemeanours] =  useContext(MisdemeanoursContext);
+    const misdemeanoursContext =  useContext(MisdemeanoursContext);
     const [filteredList, setFilteredList] = useState<Array<IMisdemeanour>>([]);
     const [loaded, setLoaded] = useState<boolean>(false);
     const [selectedFilter, setSelectedFilter] = useState("");
-    console.log(misdemeanours);
+    console.log(misdemeanoursContext);
 
     useEffect(()=>{
         console.log("1" + loaded);
-        if (misdemeanours.length < 1)
+        if (misdemeanoursContext.misdemeanours.length < 1)
         {
             return;
         }
@@ -21,13 +21,13 @@ const Misdemeanours : React.FC = () =>{
             return;
         }
         console.log("2" + selectedFilter);
-        setFilteredList(misdemeanours.map((item) => item));
+        setFilteredList(misdemeanoursContext.misdemeanours.map((item) => item));
         if (selectedFilter!=="") {
             console.log(selectedFilter);
-            setFilteredList(misdemeanours.filter((item) => item.misdemeanour === selectedFilter));
+        //    setFilteredList(misdemeanours.filter((item) => item.misdemeanour === selectedFilter));
         } 
         setLoaded(true);
-    },[selectedFilter,misdemeanours])
+    },[selectedFilter,misdemeanoursContext.misdemeanours])
 
     const updateHandlerFilter = (e: React.ChangeEvent<HTMLSelectElement>) => {
         //e.preventDefault(); 
@@ -35,15 +35,13 @@ const Misdemeanours : React.FC = () =>{
         setSelectedFilter(e.target.value);      
     };
 
-
-
-
     const emojis = [
         {id: "vegetables",description:"Not Eating Your Vegetables 🥗"},
         {id: "rudeness",description:"Mild Public Rudeness 🤪"},
         {id: "lift",description:"Speaking in a Lift  🗣"},
         {id: "united",description:"Supporting Manchester United  😈"},
     ];
+    
     const getMisdemenourDescription =(param:string) => (emojis.find( ({ id }) => id === param ));  
     
 
