@@ -10,6 +10,7 @@ const Router : React.FC = () =>
         <Route element={<MainLayout/>}>
             <Route index element={<Home/>}/>
             <Route path="home" element={<Home/>}/>
+            <Route path="fakelandia/" element={<Home/>}/>
             <Route path="misdemeanours" element={<Misdemeanours/>}/>
             <Route path="confession" element={<Confession/>}/>
             <Route path="*" element={<NotFound/>} />

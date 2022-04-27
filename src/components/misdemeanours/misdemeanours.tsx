@@ -4,24 +4,24 @@ import IMisdemeanour from './interfacemisdemeanour';
 import MisdemeanourItem from './misdemeanouritem';
 const Misdemeanours : React.FC = () =>{
 
-    const misdemeanoursContext =  useContext(MisdemeanoursContext);
+    const misdContext =  useContext(MisdemeanoursContext);
     const [filteredList, setFilteredList] = useState<Array<IMisdemeanour>>([]);
     const [loaded, setLoaded] = useState<boolean>(false);
     const [selectedFilter, setSelectedFilter] = useState("");
-    console.log(misdemeanoursContext);
+    console.log(misdContext);
 
     useEffect(()=>{
-        if (misdemeanoursContext.misdemeanours.length <= 0 || loaded)
+        if (misdContext.misdemeanours.length <= 0 || loaded)
         {
             return;
         }
-        setFilteredList(misdemeanoursContext.misdemeanours.map((item) => item));
+        setFilteredList(misdContext.misdemeanours.map((item) => item));
         if (selectedFilter!=="") {
             console.log(selectedFilter);
-            setFilteredList(misdemeanoursContext.misdemeanours.filter((item) => item.misdemeanour === selectedFilter));
+            setFilteredList(misdContext.misdemeanours.filter((item) => item.misdemeanour === selectedFilter));
         } 
         setLoaded(true);
-    },[selectedFilter,misdemeanoursContext.misdemeanours])
+    },[selectedFilter,misdContext.misdemeanours])
 
     const updateHandlerFilter = (e: React.ChangeEvent<HTMLSelectElement>) => {
         //e.preventDefault(); 

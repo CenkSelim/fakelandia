@@ -9,9 +9,8 @@ import MisdemeanourContext from './components/misdemeanours/misdemeanourscontext
 const App : React.FC = () => {
 
   const [loaded, setLoaded] = useState<boolean>(false);
-  const [numberOfMisdemeanours] = useState<number>(10);
+  const numberOfMisdemeanours:number = 10;
   const [misdemeanours, setMisdemeanours] = useState<Array<IMisdemeanour>>([]);
-
 
   useEffect(() => {
     if (loaded)
