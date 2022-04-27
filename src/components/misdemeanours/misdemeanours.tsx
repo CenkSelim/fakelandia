@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import MisdemeanoursContext from './misdemeanourscontext';
 import IMisdemeanour from './interfacemisdemeanour';
 import MisdemeanourItem from './misdemeanouritem';
+import './misdemeanour.css';
 const Misdemeanours : React.FC = () =>{
 
     const misdContext =  useContext(MisdemeanoursContext);
@@ -32,7 +33,7 @@ const Misdemeanours : React.FC = () =>{
 return (
   <div>
     <div>
-            <table>
+            <table className='misdemeanour__table'>
                 <thead>
                     <tr>
                         <th></th>
@@ -55,10 +56,10 @@ return (
                         <th></th>
                     </tr>
                     <tr>
-                        <th>Citizen Id</th>
-                        <th>Date</th>
-                        <th>Misdemeanour</th>
-                        <th>Punishment Idea</th>
+                        <th className='misdemeanour__title'>Citizen Id</th>
+                        <th className='misdemeanour__title'>Date</th>
+                        <th className='misdemeanour__title'>Misdemeanour</th>
+                        <th className='misdemeanour__title is-hidden-mobile'>Punishment Idea</th>
                     </tr>
                 </thead>
                 <tbody>

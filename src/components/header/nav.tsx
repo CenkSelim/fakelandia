@@ -4,7 +4,7 @@ const Nav : React.FC = () =>
   <nav>
       <ul className="header__links">
           <li className="nav__link">
-            <h1 className="header__title" >Fakelandia Justice Department</h1>
+            <p className="header__title" >Fakelandia Justice Department</p>
           </li>
           <li className="nav__link">
             <NavLink to='home'

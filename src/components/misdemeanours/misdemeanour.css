@@ -1,0 +1,14 @@
+.misdemeanour__table {
+ border-spacing: 0rem;
+}
+
+.misdemeanour__title {
+    font-weight: bold;
+    border-right: solid;
+    padding: 1rem;
+}
+
+.misdemeanour__detail {
+    border-right: solid;
+    padding: 1rem;
+}
