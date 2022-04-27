@@ -23,6 +23,7 @@
 
 .form__select {
     margin: 0.2rem;
+    text-size-adjust: auto;
 }
 
 .form__note {

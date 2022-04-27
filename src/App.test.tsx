@@ -3,6 +3,6 @@ import App from './App';
 
 test('renders app', () => {
   render(<App />);
-  const textTitle = screen.getByText(/Fakelandia Justice Department/i);
-  expect(textTitle).toBeInTheDocument();
+  const textTitle = screen.getAllByText(/Fakelandia Justice Department/i);
+  expect(textTitle.length).toEqual(2);
 });

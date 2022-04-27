@@ -12,3 +12,8 @@
     border-right: solid;
     padding: 1rem;
 }
+
+.misdemeanour__select {
+    margin: 0.2rem;
+    text-size-adjust: auto;
+}

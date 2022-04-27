@@ -2,7 +2,9 @@ import { useContext, useEffect, useState } from 'react';
 import MisdemeanoursContext from './misdemeanourscontext';
 import IMisdemeanour from './interfacemisdemeanour';
 import MisdemeanourItem from './misdemeanouritem';
+import { emojis } from './misdemeanourlist';
 import './misdemeanour.css';
+
 const Misdemeanours : React.FC = () =>{
 
     const misdContext =  useContext(MisdemeanoursContext);
@@ -29,8 +31,8 @@ const Misdemeanours : React.FC = () =>{
         setLoaded(false);        
         setSelectedFilter(e.target.value);      
     };
-
-return (
+ 
+    return (
   <div>
     <div>
             <table className='misdemeanour__table'>
@@ -41,15 +43,13 @@ return (
                         <th>
                             <div>
                                 <select
+                                    className='misdemeanour__select'
                                     name="misdemeanour-list"
                                     id="misdemeanour-list"
                                     onChange={updateHandlerFilter}
                                 >
                                     <option value="">All</option>
-                                    <option value="vegetables">Vegetables</option>
-                                    <option value="rudeness">Rudeness</option>
-                                    <option value="lift">Lift</option>
-                                    <option value="united">United</option>
+                                    {emojis.map((emoji) => <option key={emoji.id} value={emoji.id}>{emoji.description}</option>)}
                                 </select>
                             </div>
                         </th>
