@@ -1,5 +1,7 @@
 .misdemeanour__table {
     border-spacing: 0rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .misdemeanour__title {

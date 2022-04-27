@@ -11,7 +11,7 @@
     font-weight: bold;
 }
 .header__links {
-
+    width: fit-content;
     flex-direction:row;
     list-style: none;
     padding: 1vh;

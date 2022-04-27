@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import Router from './components/router/router';
 import React, { useEffect, useState } from 'react';
 import IMisdemeanour from './components/misdemeanours/interfacemisdemeanour';
@@ -26,11 +26,11 @@ const App : React.FC = () => {
   },[loaded,numberOfMisdemeanours]);
   
   return (
-    <BrowserRouter>
+    <HashRouter>
       <MisdemeanourContext.Provider value={{misdemeanours:misdemeanours,setMisdemeanours:setMisdemeanours}}>
         <Router />
       </MisdemeanourContext.Provider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
