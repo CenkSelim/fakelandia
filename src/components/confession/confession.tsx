@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react';
 import MisdemeanoursContext from '../misdemeanours/misdemeanourscontext';
+import './confession.css'
 const Confession: React.FC = () => {
 
   const misdemeanoursContext =  useContext(MisdemeanoursContext);
@@ -37,17 +38,18 @@ const Confession: React.FC = () => {
   };
 
 return (
-  <div>
+  <div className="form__container">
     <form onSubmit={updateHandlerMisdemeanours}>
-      <div>
+      <div  className='form'>
           <div>
-              <label htmlFor='subject'>Subject: </label>
-              <input placeholder='input'  id="subject" required />
+              <label className='form__label' htmlFor='subject'>Subject: </label>
+              <input className='form__input' placeholder='input'  id="subject" required />
           </div>
           <div>
-            <label>
+            <label  className='form__label'>
               Reason for contact:{` `}  
               <select
+                  className='form__select'
                   name="misdemeanour-list"
                   id="misdemeanour-list" 
                   onChange={updateHandlerFilter}            
@@ -63,13 +65,14 @@ return (
           <div>
               
               <textarea 
+                className='form__note'
                 id="details"
                 rows={5}
                 onChange={recalculate}
                />
           </div>
           <div>
-              <input disabled={disable} type="submit"   value="Confess" />
+              <input className='form__button' disabled={disable} type="submit"   value="Confess" />
             </div>
       </div>
     </form>

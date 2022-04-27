@@ -1,0 +1,46 @@
+.form {
+    padding: 2.5em;
+    margin: 0.5em;
+}
+
+.form__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form__label {
+    font-size: 1.2rem;
+    margin: 0.2em;
+}
+
+.form__input{
+    font-size: 1.0rem;
+    margin: 0.2em;
+    width: 75%;
+}
+
+.form__select {
+    margin: 0.2rem;
+}
+
+.form__note {
+    font-size: 1.0rem;
+    margin: 0.2em;
+    width: 95%;
+}
+
+.form__button {
+    padding: 1.2rem 1.2rem;
+    border-radius: .4rem;
+    cursor: pointer;
+    float: right;
+}
+
+.form__button:disabled {
+    padding: 1.2rem 1.2rem;
+    border-radius: .4rem;
+    cursor: default;
+    float: right;
+}
