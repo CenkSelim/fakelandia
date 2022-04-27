@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/fakelandia/static/css/main.4a36922a.css",
-    "main.js": "/fakelandia/static/js/main.33092919.js",
+    "main.css": "/fakelandia/static/css/main.255993d1.css",
+    "main.js": "/fakelandia/static/js/main.2fd4b79a.js",
     "static/js/787.0d726db2.chunk.js": "/fakelandia/static/js/787.0d726db2.chunk.js",
     "index.html": "/fakelandia/index.html",
-    "main.4a36922a.css.map": "/fakelandia/static/css/main.4a36922a.css.map",
-    "main.33092919.js.map": "/fakelandia/static/js/main.33092919.js.map",
+    "main.255993d1.css.map": "/fakelandia/static/css/main.255993d1.css.map",
+    "main.2fd4b79a.js.map": "/fakelandia/static/js/main.2fd4b79a.js.map",
     "787.0d726db2.chunk.js.map": "/fakelandia/static/js/787.0d726db2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a36922a.css",
-    "static/js/main.33092919.js"
+    "static/css/main.255993d1.css",
+    "static/js/main.2fd4b79a.js"
   ]
 }
